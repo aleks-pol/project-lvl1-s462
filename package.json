@@ -1,8 +1,11 @@
 {
   "name": "alexpol-brain-games",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Hexlet Brain Games",
-  "keywords": ["hexlet", "brain games"],
+  "keywords": [
+    "hexlet",
+    "brain games"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
