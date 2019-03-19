@@ -14,6 +14,9 @@ export const showGameDescription = (game) => {
     case 'calc':
       console.log('What is the result of the expression?\n');
       break;
+    case 'gcd':
+      console.log('Find the greatest common divisor of given numbers.\n');
+      break;
     default:
       break;
   }
