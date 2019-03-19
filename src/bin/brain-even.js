@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-import { showGreeting, showGameDescription } from '..';
-import startGame from '../even-game';
-
-showGreeting();
-
-showGameDescription('even');
+import startGame from '../games/even-game';
 
 startGame();
