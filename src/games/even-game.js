@@ -1,17 +1,17 @@
-import { generateNumber, showQuestion, startGame } from '../index';
+import { generateNumber, showQuestion, startGame } from '..';
 
-const GAME_NAME = 'even';
-const START_QUESTION = 1;
-const END_QUESTION = 100;
+const gameName = 'even';
+const startQuestion = 1;
+const endQuestion = 100;
 
 const isEven = n => n % 2 === 0;
 
 const getRightAnswer = question => (isEven(question) ? 'yes' : 'no');
 
 const generateQuestion = () => {
-  const question = generateNumber(START_QUESTION, END_QUESTION);
+  const question = generateNumber(startQuestion, endQuestion);
   showQuestion(question);
   return getRightAnswer(question);
 };
 
-export default startGame(GAME_NAME, generateQuestion);
+export default startGame(gameName, generateQuestion);

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const MAX_GAME_ROUNDS = 3;
+export const maxGameRounds = 3;
 
 export const showGreeting = () => {
   console.log('Welcome to the Brain Games!');
@@ -43,17 +43,15 @@ export const startGame = (gameName, askQuestion) => () => {
   showGreeting();
   showGameDescription(gameName);
   const name = askName();
-  for (let currentRound = 1; currentRound <= MAX_GAME_ROUNDS; currentRound += 1) {
+  for (let currentRound = 1; currentRound <= maxGameRounds; currentRound += 1) {
     const rightAnswer = askQuestion();
     const answer = askAnswer();
     if (answer === rightAnswer) {
       console.log('Correct!');
-      if (currentRound === MAX_GAME_ROUNDS) {
-        console.log(`Congratulations, ${name}!`);
-      }
     } else {
       showError(answer, rightAnswer, name);
-      break;
+      return;
     }
   }
+  console.log(`Congratulations, ${name}!`);
 };

@@ -1,9 +1,9 @@
-import { generateNumber, showQuestion, startGame } from '../index';
+import { generateNumber, showQuestion, startGame } from '..';
 
-const GAME_NAME = 'calc';
-const START_QUESTION = 1;
-const END_QUESTION = 100;
-const MATH_OPERATIONS = ['+', '-', '*'];
+const gameName = 'calc';
+const startQuestion = 1;
+const endQuestion = 100;
+const mathOperations = ['+', '-', '*'];
 
 const add = (a, b) => a + b;
 const sub = (a, b) => a - b;
@@ -23,11 +23,11 @@ const getRightAnswer = (firstArg, secondArg, mathOperation) => {
 };
 
 const generateQuestion = () => {
-  const firstArg = generateNumber(START_QUESTION, END_QUESTION);
-  const secondArg = generateNumber(START_QUESTION, END_QUESTION);
-  const mathOperation = MATH_OPERATIONS[generateNumber(0, 2)];
+  const firstArg = generateNumber(startQuestion, endQuestion);
+  const secondArg = generateNumber(startQuestion, endQuestion);
+  const mathOperation = mathOperations[generateNumber(0, 2)];
   showQuestion(`${firstArg} ${mathOperation} ${secondArg}`);
   return getRightAnswer(firstArg, secondArg, mathOperation);
 };
 
-export default startGame(GAME_NAME, generateQuestion);
+export default startGame(gameName, generateQuestion);

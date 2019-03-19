@@ -1,18 +1,18 @@
-import { generateNumber, showQuestion, startGame } from '../index';
+import { generateNumber, showQuestion, startGame } from '..';
 
-const GAME_NAME = 'gcd';
-const START_QUESTION = 1;
-const END_QUESTION = 100;
+const gameName = 'gcd';
+const startQuestion = 1;
+const endQuestion = 100;
 
 const findGcd = (a, b) => (b ? findGcd(b, a % b) : Math.abs(a)).toString();
 
 const getRightAnswer = (numberOne, numberTwo) => findGcd(numberOne, numberTwo);
 
 const generateQuestion = () => {
-  const numberOne = generateNumber(START_QUESTION, END_QUESTION);
-  const numberTwo = generateNumber(START_QUESTION, END_QUESTION);
+  const numberOne = generateNumber(startQuestion, endQuestion);
+  const numberTwo = generateNumber(startQuestion, endQuestion);
   showQuestion(`${numberOne} ${numberTwo}`);
   return getRightAnswer(numberOne, numberTwo);
 };
 
-export default startGame(GAME_NAME, generateQuestion);
+export default startGame(gameName, generateQuestion);
