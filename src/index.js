@@ -15,6 +15,9 @@ const showError = (answer, rightAnswer, name) => {
   console.log(`Let's try again, ${name}!`);
 };
 
+const askAnswer = () => readlineSync.question('Your answer: ');
+
+
 export default (description, generateQuestion) => () => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
@@ -22,7 +25,7 @@ export default (description, generateQuestion) => () => {
   for (let currentRound = 1; currentRound <= maxGameRounds; currentRound += 1) {
     const { question, rightAnswer } = generateQuestion();
     showQuestion(question);
-    const answer = readlineSync.question('Your answer: ');
+    const answer = askAnswer();
     if (answer === rightAnswer.toString()) {
       console.log('Correct!');
     } else {
