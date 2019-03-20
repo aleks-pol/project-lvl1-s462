@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { showGreeting, askName } from '..';
+import { showGreeting, askName } from '../oldIndex';
 
 showGreeting();
 

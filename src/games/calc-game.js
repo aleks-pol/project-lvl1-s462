@@ -1,6 +1,6 @@
-import { generateNumber, showQuestion, startGame } from '..';
+import startGame from '..';
+import generateNumber from '../utils';
 
-const gameName = 'calc';
 const startQuestion = 1;
 const endQuestion = 100;
 const mathOperations = ['+', '-', '*'];
@@ -26,8 +26,16 @@ const generateQuestion = () => {
   const firstArg = generateNumber(startQuestion, endQuestion);
   const secondArg = generateNumber(startQuestion, endQuestion);
   const mathOperation = mathOperations[generateNumber(0, 2)];
-  showQuestion(`${firstArg} ${mathOperation} ${secondArg}`);
-  return getRightAnswer(firstArg, secondArg, mathOperation);
+  return {
+    question: `${firstArg} ${mathOperation} ${secondArg}`,
+    rightAnswer: getRightAnswer(firstArg, secondArg, mathOperation),
+  };
 };
 
-export default startGame(gameName, generateQuestion);
+
+const game = {
+  description: 'What is the result of the expression?\n',
+  generateQuestion,
+};
+
+export default startGame(game);

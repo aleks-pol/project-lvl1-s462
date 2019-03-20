@@ -1,18 +1,25 @@
-import { generateNumber, showQuestion, startGame } from '..';
+import startGame from '..';
+import generateNumber from '../utils';
 
-const gameName = 'gcd';
 const startQuestion = 1;
 const endQuestion = 100;
 
-const findGcd = (a, b) => (b ? findGcd(b, a % b) : Math.abs(a)).toString();
+const findGcd = (a, b) => (b ? findGcd(b, a % b) : Math.abs(a));
 
-const getRightAnswer = (numberOne, numberTwo) => findGcd(numberOne, numberTwo);
+const getRightAnswer = (numberOne, numberTwo) => findGcd(numberOne, numberTwo).toString();
 
 const generateQuestion = () => {
   const numberOne = generateNumber(startQuestion, endQuestion);
   const numberTwo = generateNumber(startQuestion, endQuestion);
-  showQuestion(`${numberOne} ${numberTwo}`);
-  return getRightAnswer(numberOne, numberTwo);
+  return {
+    question: `${numberOne} ${numberTwo}`,
+    rightAnswer: getRightAnswer(numberOne, numberTwo),
+  };
 };
 
-export default startGame(gameName, generateQuestion);
+const game = {
+  description: 'Find the greatest common divisor of given numbers.\n',
+  generateQuestion,
+};
+
+export default startGame(game);

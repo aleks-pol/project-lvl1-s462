@@ -1,6 +1,6 @@
-import { generateNumber, showQuestion, startGame } from '..';
+import startGame from '..';
+import generateNumber from '../utils';
 
-const gameName = 'even';
 const startQuestion = 1;
 const endQuestion = 100;
 
@@ -10,8 +10,12 @@ const getRightAnswer = question => (isEven(question) ? 'yes' : 'no');
 
 const generateQuestion = () => {
   const question = generateNumber(startQuestion, endQuestion);
-  showQuestion(question);
-  return getRightAnswer(question);
+  return { question, rightAnswer: getRightAnswer(question) };
 };
 
-export default startGame(gameName, generateQuestion);
+const game = {
+  description: 'Answer "yes" if number even otherwise answer "no".\n',
+  generateQuestion,
+};
+
+export default startGame(game);
