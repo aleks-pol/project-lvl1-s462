@@ -9,15 +9,15 @@ npm install -g alexpol-brain-games
 ```
 
 ## Games
-* [Even game](#even-game-demo)
+* [Even game](#even-game)
 
-* [Calc game](#calc-game-demo)
+* [Calc game](#calc-game)
 
-* [Gcd game](#gcd-game-demo)
+* [Gcd game](#gcd-game)
 
-* [Progression game](#progression-game-demo)
+* [Progression game](#progression-game)
 
-* [Prime game](#prime-game-demo)
+* [Prime game](#prime-game)
 
 ***
 
@@ -38,7 +38,7 @@ Usage:
 ```bash
 $ brain-calc
 ```
-[![asciicast](https://asciinema.org/a/D2lRSvnYolyn2Nw1O4P0AVoU5.svg)](https://asciinema.org/a/D2lRSvnYolyn2Nw1O4P0AVoU5)
+[![asciicast](https://asciinema.org/a/3uEcjFZ7XjFYkRNNCMeHv3DK3.svg)](https://asciinema.org/a/3uEcjFZ7XjFYkRNNCMeHv3DK3)
 ***
 #### Gcd Game
 Find the greatest common divisor of given numbers.
