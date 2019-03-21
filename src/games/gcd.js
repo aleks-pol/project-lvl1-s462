@@ -8,7 +8,7 @@ const findGcd = (a, b) => (b ? findGcd(b, a % b) : Math.abs(a));
 
 const getRightAnswer = (numberOne, numberTwo) => findGcd(numberOne, numberTwo);
 
-const generateQuestion = () => {
+const generateGame = () => {
   const numberOne = generateNumber(numbersRange);
   const numberTwo = generateNumber(numbersRange);
   return {
@@ -17,4 +17,4 @@ const generateQuestion = () => {
   };
 };
 
-export default startGame(gameDescription, generateQuestion);
+export default startGame(gameDescription, generateGame);

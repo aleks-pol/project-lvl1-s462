@@ -23,7 +23,7 @@ const getRightAnswer = (firstArg, secondArg, mathOperation) => {
   }
 };
 
-const generateQuestion = () => {
+const generateGame = () => {
   const firstArg = generateNumber(numbersRange);
   const secondArg = generateNumber(numbersRange);
   const mathOperation = mathOperations[generateNumber(operationsRange)];
@@ -33,4 +33,4 @@ const generateQuestion = () => {
   };
 };
 
-export default startGame(gameDescription, generateQuestion);
+export default startGame(gameDescription, generateGame);

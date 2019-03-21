@@ -6,12 +6,12 @@ const numbersRange = [1, 5000];
 const maxPrimeNumber = 5000;
 
 const isPrime = (num) => {
-  for (let i = 2; i < num; i += 1) {
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
     if (num % i === 0) {
       return false;
     }
   }
-  return true;
+  return num > 1;
 };
 const generatePrimeNumbers = (count) => {
   const arr = [2];
@@ -27,10 +27,10 @@ const primeNumbers = generatePrimeNumbers(maxPrimeNumber);
 
 const getRightAnswer = question => (primeNumbers.indexOf(question) > -1 ? 'yes' : 'no');
 
-const generateQuestion = () => {
+const generateGame = () => {
   const question = generateNumber(numbersRange);
   const rightAnswer = getRightAnswer(question);
   return { question, rightAnswer };
 };
 
-export default startGame(gameDescription, generateQuestion);
+export default startGame(gameDescription, generateGame);
