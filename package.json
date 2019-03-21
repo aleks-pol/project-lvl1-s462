@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/aleks-pol/project-lvl1-s462#readme",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",

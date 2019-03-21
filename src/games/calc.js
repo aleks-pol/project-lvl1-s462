@@ -1,7 +1,7 @@
 import startGame from '..';
 import generateNumber from '../utils';
 
-const gameDescription = 'What is the result of the expression?\n';
+const gameDescription = 'What is the result of the expression?';
 const numbersRange = [1, 100];
 const mathOperations = ['+', '-', '*'];
 const operationsRange = [0, mathOperations.length - 1];
@@ -23,14 +23,14 @@ const getRightAnswer = (firstArg, secondArg, mathOperation) => {
   }
 };
 
-const generateGame = () => {
+const generateData = () => {
   const firstArg = generateNumber(numbersRange);
   const secondArg = generateNumber(numbersRange);
   const mathOperation = mathOperations[generateNumber(operationsRange)];
   return {
     question: `${firstArg} ${mathOperation} ${secondArg}`,
-    rightAnswer: getRightAnswer(firstArg, secondArg, mathOperation),
+    rightAnswer: getRightAnswer(firstArg, secondArg, mathOperation).toString(),
   };
 };
 
-export default startGame(gameDescription, generateGame);
+export default startGame(gameDescription, generateData);

@@ -1,9 +1,8 @@
 import startGame from '..';
 import generateNumber from '../utils';
 
-const gameDescription = 'Answer "yes" if number even otherwise answer "no".\n';
+const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
 const numbersRange = [1, 5000];
-const maxPrimeNumber = 5000;
 
 const isPrime = (num) => {
   for (let i = 2; i <= Math.sqrt(num); i += 1) {
@@ -13,24 +12,13 @@ const isPrime = (num) => {
   }
   return num > 1;
 };
-const generatePrimeNumbers = (count) => {
-  const arr = [2];
-  for (let i = 3; i < count; i += 2) {
-    if (isPrime(i)) {
-      arr.push(i);
-    }
-  }
-  return arr;
-};
 
-const primeNumbers = generatePrimeNumbers(maxPrimeNumber);
+const getRightAnswer = number => (isPrime(number) ? 'yes' : 'no');
 
-const getRightAnswer = question => (primeNumbers.indexOf(question) > -1 ? 'yes' : 'no');
-
-const generateGame = () => {
+const generateData = () => {
   const question = generateNumber(numbersRange);
   const rightAnswer = getRightAnswer(question);
   return { question, rightAnswer };
 };
 
-export default startGame(gameDescription, generateGame);
+export default startGame(gameDescription, generateData);
