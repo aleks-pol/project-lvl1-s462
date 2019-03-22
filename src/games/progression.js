@@ -18,7 +18,8 @@ const generateData = () => {
   const hiddenNumIndex = generateNumber([0, length - 1]);
   const progressionWithHiddenEl = progression.map((item, index) => (index === hiddenNumIndex ? '..' : item));
   const question = progressionWithHiddenEl.join(' ');
-  return { question, rightAnswer: progression[hiddenNumIndex].toString() };
+  const rightAnswer = progression[hiddenNumIndex].toString();
+  return { question, rightAnswer };
 };
 
 export default startGame(gameDescription, generateData);

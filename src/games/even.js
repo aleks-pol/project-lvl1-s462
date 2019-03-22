@@ -6,11 +6,10 @@ const numbersRange = [1, 100];
 
 const isEven = n => n % 2 === 0;
 
-const getRightAnswer = question => (isEven(question) ? 'yes' : 'no');
-
 const generateData = () => {
   const question = generateNumber(numbersRange);
-  return { question, rightAnswer: getRightAnswer(question) };
+  const rightAnswer = isEven(question) ? 'yes' : 'no';
+  return { question, rightAnswer };
 };
 
 export default startGame(gameDescription, generateData);

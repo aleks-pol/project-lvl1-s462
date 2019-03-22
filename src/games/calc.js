@@ -6,31 +6,19 @@ const numbersRange = [1, 100];
 const mathOperations = ['+', '-', '*'];
 const operationsRange = [0, mathOperations.length - 1];
 
-const add = (a, b) => a + b;
-const sub = (a, b) => a - b;
-const mul = (a, b) => a * b;
-
-const getRightAnswer = (firstArg, secondArg, mathOperation) => {
-  switch (mathOperation) {
-    case '+':
-      return add(firstArg, secondArg);
-    case '-':
-      return sub(firstArg, secondArg);
-    case '*':
-      return mul(firstArg, secondArg);
-    default:
-      return null;
-  }
+const calcFunction = {
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '*': (a, b) => a * b,
 };
 
 const generateData = () => {
   const firstArg = generateNumber(numbersRange);
   const secondArg = generateNumber(numbersRange);
   const mathOperation = mathOperations[generateNumber(operationsRange)];
-  return {
-    question: `${firstArg} ${mathOperation} ${secondArg}`,
-    rightAnswer: getRightAnswer(firstArg, secondArg, mathOperation).toString(),
-  };
+  const question = `${firstArg} ${mathOperation} ${secondArg}`;
+  const rightAnswer = calcFunction[mathOperation](firstArg, secondArg).toString();
+  return { question, rightAnswer };
 };
 
 export default startGame(gameDescription, generateData);

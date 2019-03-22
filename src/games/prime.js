@@ -13,11 +13,9 @@ const isPrime = (num) => {
   return num > 1;
 };
 
-const getRightAnswer = number => (isPrime(number) ? 'yes' : 'no');
-
 const generateData = () => {
   const question = generateNumber(numbersRange);
-  const rightAnswer = getRightAnswer(question);
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
   return { question, rightAnswer };
 };
 
